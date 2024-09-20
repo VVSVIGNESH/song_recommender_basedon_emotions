@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection & Song Recommendation</title>
+    <script>
+        function getRecommendations() {
+            fetch('/recommend_songs')
+                .then(response => response.json())
+                .then(data => {
+                    let songsList = document.getElementById("songs");
+                    songsList.innerHTML = "";
+                    data.forEach(song => {
+                        let listItem = document.createElement("li");
+                        listItem.textContent = `${song.name} by ${song.artist}`;
+                        songsList.appendChild(listItem);
+                    });
+                });
+        }
+    </script>
+</head>
+<body>
+    <h1>Emotion Detection & Song Recommendation</h1>
+    <div class="camera">
+        <img src="{{ url_for('video_feed') }}" alt="Emotion Detection Feed">
+    </div>
+    <button onclick="getRecommendations()">Get Song Recommendations</button>
+    <ul id="songs"></ul>
+</body>
+</html>
