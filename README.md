@@ -2,7 +2,8 @@
 
 ## Music Recommendation-system using emotion detection
 Dataset is downloaded from https://www.kaggle.com/msambare/fer2013
-In the same folder, create a new folder named data and save the test and train folders in it. (This repository already has the dataset download and saved in it).
+You can use the provided link for downloading the dataset
+In the same folder, create a new folder named data and save the test and train folders in it.
 ## Packages need to be installed
 Run pip install -r requirements.txt to install all dependencies.
 ## To train Emotion detector model
